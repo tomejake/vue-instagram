@@ -11,6 +11,7 @@
 
   <Container />
 
+  <div class="sample-box">임시박스</div>
   <div class="footer">
     <ul class="footer-button-plus">
       <input type="file" id="file" class="inputfile" />
@@ -20,10 +21,12 @@
 </template>
 
 <script>
+import Container from './components/Container.vue';
 
 export default {
   name: 'App',
   components: {
+    Container
   }
 }
 </script>
