@@ -8,10 +8,9 @@
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
-
-  <Container />
-
-  <div class="sample-box">임시박스</div>
+11
+  <Container :instaData="instaData"/>
+22
   <div class="footer">
     <ul class="footer-button-plus">
       <input type="file" id="file" class="inputfile" />
@@ -22,9 +21,15 @@
 
 <script>
 import Container from './components/Container.vue';
+import data from './assets/data.js';
 
 export default {
   name: 'App',
+  data(){
+    return {
+      instaData : data,
+    }
+  },
   components: {
     Container
   }

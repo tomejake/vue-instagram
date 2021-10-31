@@ -1,21 +1,25 @@
 <template>
-  <div class="post">
+이거 왜 안돼34124
+<!-- <div class="post">
     <div class="post-header">
-      <div class="profile"></div>
-      <span class="profile-name">ChanKim</span>
+        <div class="profile"></div>
+        <span class="profile-name">{{instaData.name}}</span>
+        </div>
+        <div class="post-body"></div>
+        <div class="post-content">
+        <p>{{instaData.likes}} Likes</p>
+        <p><strong>{{instaData.name}}</strong> {{instaData.content}}</p>
+        <p class="date">{{instaData.date}}</p>
     </div>
-    <div class="post-body"></div>
-    <div class="post-content">
-      <p>43 Likes</p>
-      <p><strong>글쓴이아이디</strong> 임시내용</p>
-      <p class="date">May 15</p>
-    </div>
-</div> 
+</div>  -->
 </template>
 
 <script>
 export default {
-    name : 'Post'
+    name : 'Post',
+    props : {
+        instaData : Object
+    }
 }
 </script>
 

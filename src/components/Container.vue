@@ -1,15 +1,22 @@
 <template>
-  <div>
-      <Post />
-      <Post />
-      <Post />
-  </div>
+<div>
+    55
+    <Post />
+</div>
+  
 </template>
 
 <script>
-export default {
-    name:'Container'
+import Post from './Post.vue';
 
+export default {
+    name:'Container',
+    component : {
+        Post
+    },
+    props : {
+        instaData : Array,
+    }
 }
 </script>
 
