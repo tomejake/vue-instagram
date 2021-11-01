@@ -9,9 +9,7 @@
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-  <Hello />
-  <div class="sample-box">임시박스</div>
-
+  <Container :data="data"/>
 <div class="footer">
   <ul class="footer-button-plus">
     <input type="file" id="file" class="inputfile" />
@@ -21,16 +19,18 @@
 </template>
 
 <script>
-import Hello from './components/Hello';
+import Container from './components/Container';
+import data from './assets/data'
 
 export default {
   name: 'App',
   data(){
     return {
+      data
     }
   },
   components: {
-    Hello,
+    Container,
   }
 }
 </script>
