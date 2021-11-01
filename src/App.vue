@@ -1,3 +1,4 @@
+
 <template>
 <div class="header">
   <ul class="header-button-left">
@@ -8,8 +9,7 @@
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-
-  <Container />
+  <Hello />
   <div class="sample-box">임시박스</div>
 
 <div class="footer">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Container from './components/Container.vue';
+import Hello from './components/Hello';
 
 export default {
   name: 'App',
@@ -30,12 +30,24 @@ export default {
     }
   },
   components: {
-    Container
+    Hello,
   }
 }
 </script>
 
 <style>
+#app {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "consolas";
+  margin-top: 60px;
+  width: 100%;
+  max-width: 460px;
+  margin: auto;
+  position: relative;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
 body {
   margin: 0;
 }
@@ -101,15 +113,5 @@ ul {
 .input-plus {
   cursor: pointer;
 }
-#app {
-  box-sizing: border-box;
-  font-family: "consolas";
-  margin-top: 60px;
-  width: 100%;
-  max-width: 460px;
-  margin: auto;
-  position: relative;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
-}
+
 </style>
