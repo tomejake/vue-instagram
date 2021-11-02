@@ -9,7 +9,7 @@
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-  <Container :data="data"/>
+  <Container :data="data" :step="step"/>
   <button @click="more">더보기</button>
 <div class="footer">
   <ul class="footer-button-plus">
@@ -24,7 +24,7 @@
 <button @click="step = 0">버튼0</button>
 <button @click="step = 1">버튼2</button>
 <button @click="step = 2">버튼1</button>
- -->
+-->
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
     return {
       data,
       moreData : 0,
-      //step : 0
+      step : 0
     }
   },
   components: {
