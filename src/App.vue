@@ -17,6 +17,14 @@
     <label for="file" class="input-plus">+</label>
   </ul>
 </div>
+
+<!-- <div v-if="step == 0">내용0</div>
+<div v-if="step == 1">내용1</div>
+<div v-if="step == 2">내용2</div>
+<button @click="step = 0">버튼0</button>
+<button @click="step = 1">버튼2</button>
+<button @click="step = 2">버튼1</button>
+ -->
 </template>
 
 <script>
@@ -30,6 +38,7 @@ export default {
     return {
       data,
       moreData : 0,
+      //step : 0
     }
   },
   components: {
@@ -43,12 +52,15 @@ export default {
         this.data.push(result.data);
         this.moreData++;
       });
-    }
+    },
   }
 }
 </script>
 
 <style>
+.tab {
+  opacity: 0;
+}
 #app {
   box-sizing: border-box;
   font-family: "consolas";
