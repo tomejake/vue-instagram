@@ -1,8 +1,6 @@
 <template>
 <div>
-    <Post :data="data[0]"/>
-    <Post :data="data[1]"/>
-    <Post :data="data[2]"/>
+    <Post v-for="(d,i) in data" :key="i" :data="data[i]"/>
 </div>
 </template>
 
@@ -15,7 +13,7 @@ export default {
     Post
     },
     props : {
-        data : Array
+        data : Object
     }
 }
 </script>

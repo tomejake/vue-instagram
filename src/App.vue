@@ -10,6 +10,7 @@
   <img src="./assets/logo.png" class="logo" />
 </div>
   <Container :data="data"/>
+  <button @click="more">더보기</button>
 <div class="footer">
   <ul class="footer-button-plus">
     <input type="file" id="file" class="inputfile" />
@@ -21,23 +22,34 @@
 <script>
 import Container from './components/Container';
 import data from './assets/data'
+import axios from 'axios'
 
 export default {
   name: 'App',
   data(){
     return {
-      data
+      data,
+      moreData : 0,
     }
   },
   components: {
     Container,
+  },
+  methods : {
+    more(){
+      axios.get(`https://codingapple1.github.io/vue/more${this.moreData}.json`).then(result=>{
+        // then(요청성공시 실행 코드)
+        // catch(요청실패시 실행 코드)
+        this.data.push(result.data);
+        this.moreData++;
+      });
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  text-align: center;
   box-sizing: border-box;
   font-family: "consolas";
   margin-top: 60px;

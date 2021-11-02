@@ -2,19 +2,23 @@
 <div class="post">
   <div class="post-header">
     <div class="profile"></div>
-    <span class="profile-name">ChanKim</span>
+    <span class="profile-name">{{data.name}}</span>
   </div>
-  <div class="post-body"></div>
+  <div class="post-body" :style="{ backgroundImage : `url(${data.postImage})` }"></div>
   <div class="post-content">
-    <p>43 Likes</p>
-    <p><strong>글쓴이아이디</strong> 임시내용</p>
-    <p class="date">May 15</p>
+    <p>{{data.likes}} likes</p>
+    <p><strong>{{data.name}}</strong> {{data.content}}</p>
+    <p class="date">{{data.date}}</p>
   </div>
 </div> 
 </template>
 
 <script>
 export default {
+  name : 'Post',
+  props : {
+    data : Object,
+  }
 }
 </script>
 
