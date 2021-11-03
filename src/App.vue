@@ -2,18 +2,19 @@
 <template>
 <div class="header">
   <ul class="header-button-left">
-    <li>Cancel</li>
+    <li @click="step = 0">Cancel</li>
   </ul>
   <ul class="header-button-right">
-    <li>Next</li>
+    <li v-if="step==1" @click="step++">Next</li>
+    <li v-if="step==2" @click="publish">Complete</li>
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-  <Container :data="data" :step="step"/>
+  <Container :data="data" :step="step" :imageURL="imageURL"/>
   <button @click="more">더보기</button>
 <div class="footer">
   <ul class="footer-button-plus">
-    <input type="file" id="file" class="inputfile" />
+    <input @change="upload" accept="image/*" type="file" id="file" class="inputfile" />
     <label for="file" class="input-plus">+</label>
   </ul>
 </div>
@@ -38,7 +39,8 @@ export default {
     return {
       data,
       moreData : 0,
-      step : 0
+      step : 0,
+      imageURL : '',
     }
   },
   components: {
@@ -53,6 +55,16 @@ export default {
         this.moreData++;
       });
     },
+    upload(e){
+      let file = e.target.files;
+      console.log(file);
+      this.imageURL = URL.createObjectURL(file[0]);
+      this.step=1;
+    },
+    publish(){
+      this.data.unshift(data);
+      this.step = 0;
+    }
   }
 }
 </script>
