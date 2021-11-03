@@ -6,11 +6,11 @@
   </ul>
   <ul class="header-button-right">
     <li v-if="step==1" @click="step++">Next</li>
-    <li v-if="step==2" @click="publish">Complete</li>
+    <li v-if="step==2" @click="publish">End</li>
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-  <Container :data="data" :step="step" :imageURL="imageURL"/>
+  <Container :data="data" :step="step" :imageURL="imageURL" @write="writeContent = $event"/>
   <button @click="more">더보기</button>
 <div class="footer">
   <ul class="footer-button-plus">
@@ -41,6 +41,7 @@ export default {
       moreData : 0,
       step : 0,
       imageURL : '',
+      writeContent : ''
     }
   },
   components: {
@@ -62,7 +63,17 @@ export default {
       this.step=1;
     },
     publish(){
-      this.data.unshift(data);
+      var newData = {
+      name: "Kim Hyun",
+      userImage: "https://placeimg.com/100/100/arch",
+      postImage: this.imageURL,
+      likes: 36,
+      date: "May 15",
+      liked: false,
+      content: this.writeContent,
+      filter: "perpetua"
+      };
+      this.data.unshift(newData);
       this.step = 0;
     }
   }
