@@ -9,7 +9,9 @@
     <div v-if="step == 1">
         <div class="upload-image" :style="`background-image : url(${imageURL})`"></div>
         <div class="filters">
-            <FilterBox :imageURL="imageURL" v-for="(filter,i) in filters" :key="i" :filter="filter"></FilterBox>
+            <FilterBox :imageURL="imageURL" v-for="(filter,i) in filters" :key="i" :filter="filter" >
+                {{filter}}
+            </FilterBox>
         </div>
     </div>    
 
