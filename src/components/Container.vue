@@ -7,7 +7,7 @@
 
     <!-- 필터선택페이지 -->
     <div v-if="step == 1">
-        <div class="upload-image" :style="`background-image : url(${imageURL})`"></div>
+        <div :class="imageFilter" class="upload-image" :style="`background-image : url(${imageURL})`"></div>
         <div class="filters">
             <FilterBox :imageURL="imageURL" v-for="(filter,i) in filters" :key="i" :filter="filter" >
                 {{filter}}
@@ -17,7 +17,7 @@
 
     <!-- 글작성페이지 -->
     <div v-if="step == 2">
-        <div class="upload-image" :style="`background-image: url(${imageURL})`"></div>
+        <div :class="imageFilter" class="upload-image" :style="`background-image: url(${imageURL})`"></div>
         <div class="write">
             <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
         </div>
@@ -45,7 +45,8 @@ export default {
     props : {
         data : Object,
         step : Number,
-        imageURL : String
+        imageURL : String,
+        imageFilter : String
     }
 }
 </script>

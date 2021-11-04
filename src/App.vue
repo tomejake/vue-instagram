@@ -10,7 +10,7 @@
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
-  <Container :data="data" :step="step" :imageURL="imageURL" @write="writeContent = $event"/>
+  <Container :data="data" :step="step" :imageURL="imageURL" @write="writeContent = $event" :imageFilter="imageFilter" />
   <button @click="more">더보기</button>
 <div class="footer">
   <ul class="footer-button-plus">
@@ -41,8 +41,14 @@ export default {
       moreData : 0,
       step : 0,
       imageURL : '',
-      writeContent : ''
+      writeContent : '',
+      imageFilter : ''
     }
+  },
+  mounted() {
+    this.emitter.on('name',(e)=>{
+      this.imageFilter = e;
+    });
   },
   components: {
     Container,
@@ -71,7 +77,7 @@ export default {
       date: "May 15",
       liked: false,
       content: this.writeContent,
-      filter: "perpetua"
+      filter: this.imageFilter
       };
       this.data.unshift(newData);
       this.step = 0;
