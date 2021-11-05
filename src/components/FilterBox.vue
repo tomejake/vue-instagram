@@ -1,7 +1,6 @@
 <template>
-<div :class="`${filter} filter-item`" :style="`background-image: url(${imageURL})`">
+<div @click="fire" :class="`${filter} filter-item`" :style="`background-image: url(${imageURL})`">
     <slot></slot>
-    <button @click="fire">버튼</button>
 </div> 
 </template>
 
@@ -14,7 +13,7 @@ export default {
     },
     methods : {
         fire(){
-            this.emitter.emit('name',this.filter);
+            this.emitter.emit('boxClick',this.filter);
         }
     }
 }

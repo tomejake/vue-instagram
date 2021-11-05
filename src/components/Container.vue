@@ -19,7 +19,7 @@
     <div v-if="step == 2">
         <div :class="imageFilter" class="upload-image" :style="`background-image: url(${imageURL})`"></div>
         <div class="write">
-            <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
+            <textarea @input="$emit('write', $event.target.value)" class="write-box" placeholder="Write!"></textarea>
         </div>
     </div>
 </div>

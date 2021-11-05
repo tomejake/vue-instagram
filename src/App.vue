@@ -19,7 +19,8 @@
   </ul>
 </div>
 
-<!-- <div v-if="step == 0">내용0</div>
+<!-- 
+<div v-if="step == 0">내용0</div>
 <div v-if="step == 1">내용1</div>
 <div v-if="step == 2">내용2</div>
 <button @click="step = 0">버튼0</button>
@@ -46,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    this.emitter.on('name',(e)=>{
+    this.emitter.on('boxClick',(e)=>{
       this.imageFilter = e;
     });
   },
