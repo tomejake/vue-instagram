@@ -6,5 +6,4 @@ let app = createApp(App);
 app.config.globalProperties.emitter = emitter;
 
 import store from './store.js'
-
 app.use(store).mount('#app')
