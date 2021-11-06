@@ -10,6 +10,8 @@
   </ul>
   <img src="./assets/logo.png" class="logo" />
 </div>
+  <p>{{$store.state.more}}</p>
+  <button @click="$store.dispatch('getData')">더보기버튼</button>
   <Container :data="data" :step="step" :imageURL="imageURL" @write="writeContent = $event" :imageFilter="imageFilter" />
   <button @click="more">더보기</button>
 <div class="footer">
