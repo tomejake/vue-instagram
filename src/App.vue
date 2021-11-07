@@ -35,6 +35,7 @@
 import Container from './components/Container';
 import data from './assets/data'
 import axios from 'axios'
+import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'App',
@@ -56,7 +57,12 @@ export default {
   components: {
     Container,
   },
+  computed : {
+    ...mapState(['name', 'age', 'likes']),
+  },
   methods : {
+    ...mapActions(['getData']),
+    ...mapMutations(['setMore', 'nameChange', 'agePlus', 'likesToggle']),
     more(){
       axios.get(`https://codingapple1.github.io/vue/more${this.moreData}.json`).then(result=>{
         // then(요청성공시 실행 코드)
